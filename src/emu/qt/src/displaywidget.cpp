@@ -175,7 +175,9 @@ bool display_widget::cursor_visiblity() {
 }
 
 void display_widget::keyPressEvent(QKeyEvent *event) {
+    LOG_ERROR(eka2l1::FRONTEND_UI, "Eating key input... {}", event->key());
     if (event->isAutoRepeat()) {
+        LOG_ERROR(eka2l1::FRONTEND_UI, "Auto repeat press, ignore");
         return;
     }
 
@@ -185,7 +187,9 @@ void display_widget::keyPressEvent(QKeyEvent *event) {
 }
 
 void display_widget::keyReleaseEvent(QKeyEvent *event) {
+    LOG_ERROR(eka2l1::FRONTEND_UI, "Releasing key input... {}", event->key());
     if (event->isAutoRepeat()) {
+        LOG_ERROR(eka2l1::FRONTEND_UI, "Auto repeat release, ignore");
         return;
     }
 
